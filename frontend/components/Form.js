@@ -11,7 +11,7 @@ const validationErrors = {
 
 // 👇 Here you will create your schema.
 const formSchema = yup.object().shape({
-  fullName: yup.string().required("Full Name is Required").min(3, validationErrors.fullNameTooShort).max(20, validationErrors.fullNameTooLong),
+  fullName: yup.string().required("Full Name is Required").min(3, validationErrors.fullNameTooShort).max(20, validationErrors.fullNameTooLong).trim(),
   size: yup.string().required("size is required").oneOf(["S","M","L"], validationErrors.sizeIncorrect)
 })
 // 👇 This array could help you construct your checkboxes using .map in the JSX.
